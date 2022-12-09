@@ -1,0 +1,134 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployBounceProducer",
+			"inputs": [
+				{"name":"nonce","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "fiveUInts",
+			"inputs": [
+				{"name":"a","type":"uint128"},
+				{"name":"b","type":"uint128"},
+				{"name":"c","type":"uint128"},
+				{"name":"d","type":"uint128"},
+				{"name":"e","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "fiveStrings",
+			"inputs": [
+				{"name":"a","type":"string"},
+				{"name":"b","type":"string"},
+				{"name":"c","type":"string"},
+				{"name":"d","type":"string"},
+				{"name":"e","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "fiveUIntsArrayMaps",
+			"inputs": [
+				{"name":"a","type":"map(uint128,uint128[])"},
+				{"name":"b","type":"map(uint128,uint128[])"},
+				{"name":"c","type":"map(uint128,uint128[])"},
+				{"name":"d","type":"map(uint128,uint128[])"},
+				{"name":"e","type":"map(uint128,uint128[])"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "fiveHugeMaps",
+			"inputs": [
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"a","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"b","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"c","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"d","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"e","type":"map(uint128,tuple[])"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"bounceProducerCode","type":"cell"},
+		{"key":2,"name":"owner","type":"address"},
+		{"key":3,"name":"nonce","type":"uint128"}
+	],
+	"events": [
+		{
+			"name": "FiveUInts",
+			"inputs": [
+				{"name":"a","type":"uint128"},
+				{"name":"b","type":"uint128"},
+				{"name":"c","type":"uint128"},
+				{"name":"d","type":"uint128"},
+				{"name":"e","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FiveStrings",
+			"inputs": [
+				{"name":"a","type":"string"},
+				{"name":"b","type":"string"},
+				{"name":"c","type":"string"},
+				{"name":"d","type":"string"},
+				{"name":"e","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FiveUIntsArrayMaps",
+			"inputs": [
+				{"name":"a","type":"map(uint128,uint128[])"},
+				{"name":"b","type":"map(uint128,uint128[])"},
+				{"name":"c","type":"map(uint128,uint128[])"},
+				{"name":"d","type":"map(uint128,uint128[])"},
+				{"name":"e","type":"map(uint128,uint128[])"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FiveHugeMaps",
+			"inputs": [
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"a","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"b","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"c","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"d","type":"map(uint128,tuple[])"},
+				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"e","type":"map(uint128,tuple[])"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"bounceProducerCode","type":"cell"},
+		{"name":"owner","type":"address"},
+		{"name":"nonce","type":"uint128"},
+		{"name":"bounceProducer","type":"address"}
+	]
+}

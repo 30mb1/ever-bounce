@@ -1,0 +1,949 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+ENDS
+.loc ../contracts/BounceReceiver.sol, 14
+ACCEPT
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	_reserve_413ab4a8_internal
+.type	_reserve_413ab4a8_internal, @function
+CALL $_reserve_413ab4a8_internal_macro$
+
+.macro _reserve_413ab4a8_internal_macro
+.loc ../contracts/BounceReceiver.sol, 23
+GETPARAM 7
+FIRST
+DEPTH
+ADDCONST -2
+PICK
+SUB
+UFITS 128
+PUSHINT 100000000
+MIN
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro deployBounceProducer
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/BounceReceiver.sol, 27
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 128
+ENDS
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $deployBounceProducer_787e7003_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	deployBounceProducer_787e7003_internal
+.type	deployBounceProducer_787e7003_internal, @function
+CALL $deployBounceProducer_787e7003_internal_macro$
+
+.macro deployBounceProducer_787e7003_internal_macro
+.loc ../contracts/BounceReceiver.sol, 28
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 30
+PUSHINT 0
+NEWC
+STU 256
+PUSHINT 0
+NEWDICT
+PUSHINT 64
+DICTUSETB
+SWAP
+NEWC
+STU 128
+PUSHINT 1
+ROT
+PUSHINT 64
+DICTUSETB
+NEWC
+STDICT
+ENDC
+GETGLOB 10
+NEWC
+STSLICECONST x2_
+STOPTREF
+STOPTREF
+STZERO
+ENDC
+DUP
+HASHCU
+NEWC
+STSLICECONST x801_
+STU 256
+ENDC
+CTOS
+TUCK
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 3
+STUR 111
+OVER
+CALLREF {
+	CTOS
+	LDI 1
+	SWAP
+	PUSHCONT {
+		LDI 5
+		NIP
+	}
+	IF
+	LDI 1
+	SWAP
+	PUSHCONT {
+		LDI 2
+		NIP
+	}
+	IF
+	LDOPTREF
+	LDOPTREF
+	LDDICT
+	ENDS
+	BLKDROP 3
+}
+STREF
+STSLICECONST x345aaf9fc_
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+SETGLOB 13
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro fiveUInts
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/BounceReceiver.sol, 47
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 128
+LDU 128
+LDU 128
+LDU 128
+LDU 128
+ENDS
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $fiveUInts_0d485330_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	fiveUInts_0d485330_internal
+.type	fiveUInts_0d485330_internal, @function
+CALL $fiveUInts_0d485330_internal_macro$
+
+.macro fiveUInts_0d485330_internal_macro
+.loc ../contracts/BounceReceiver.sol, 48
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 49
+REVERSE 5, 0
+GETGLOB 13
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 5
+NEWC
+STSLICECONST x2209bc82
+STU 128
+STU 128
+STU 128
+STU 128
+STU 128
+STBREFR
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.globl	handleFiveUInts_8dfe4f99_internal
+.type	handleFiveUInts_8dfe4f99_internal, @function
+CALL $handleFiveUInts_8dfe4f99_internal_macro$
+
+.macro handleFiveUInts_8dfe4f99_internal_macro
+.loc ../contracts/BounceReceiver.sol, 53
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 54
+LDU 128
+LDU 128
+LDU 128
+LDU 128
+LDU 128
+ENDS
+.loc ../contracts/BounceReceiver.sol, 56
+REVERSE 5, 0
+PUSHSLICE xc000000000000000000000000063a01b87
+NEWC
+STSLICE
+STU 128
+STU 128
+STU 128
+STU 128
+STU 128
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 57
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro fiveStrings
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/BounceReceiver.sol, 61
+LDREF
+LDREF
+LDREF
+LDREF
+ENDS
+CTOS
+LDREF
+LDREF
+ENDS
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $fiveStrings_b7c71a1f_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	fiveStrings_b7c71a1f_internal
+.type	fiveStrings_b7c71a1f_internal, @function
+CALL $fiveStrings_b7c71a1f_internal_macro$
+
+.macro fiveStrings_b7c71a1f_internal_macro
+.loc ../contracts/BounceReceiver.sol, 62
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 63
+REVERSE 5, 0
+GETGLOB 13
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 5
+NEWC
+STSLICECONST x29ebe03b
+STREF
+STREF
+STREF
+ROTREV
+NEWC
+STREF
+STREF
+STBREFR
+STBREFR
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.globl	handleFiveStrings_e2a92608_internal
+.type	handleFiveStrings_e2a92608_internal, @function
+CALL $handleFiveStrings_e2a92608_internal_macro$
+
+.macro handleFiveStrings_e2a92608_internal_macro
+.loc ../contracts/BounceReceiver.sol, 66
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 67
+LDREF
+LDREF
+LDREF
+LDREF
+ENDS
+CTOS
+LDREF
+LDREF
+ENDS
+.loc ../contracts/BounceReceiver.sol, 68
+REVERSE 5, 0
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 5
+NEWC
+STSLICECONST x5405b50f
+STREF
+STREF
+STREF
+ROTREV
+NEWC
+STREF
+STREF
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 69
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro fiveUIntsArrayMaps
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/BounceReceiver.sol, 74
+LDDICT
+LDDICT
+LDDICT
+LDREF
+ENDS
+CTOS
+LDDICT
+LDDICT
+ENDS
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $fiveUIntsArrayMaps_bb5fa2be_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	fiveUIntsArrayMaps_bb5fa2be_internal
+.type	fiveUIntsArrayMaps_bb5fa2be_internal, @function
+CALL $fiveUIntsArrayMaps_bb5fa2be_internal_macro$
+
+.macro fiveUIntsArrayMaps_bb5fa2be_internal_macro
+.loc ../contracts/BounceReceiver.sol, 81
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 82
+REVERSE 5, 0
+GETGLOB 13
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 5
+NEWC
+STSLICECONST x150ff95a
+STDICT
+STDICT
+STDICT
+ROTREV
+NEWC
+STDICT
+STDICT
+STBREFR
+STBREFR
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.globl	handleFiveUIntsArrayMaps_4960c977_internal
+.type	handleFiveUIntsArrayMaps_4960c977_internal, @function
+CALL $handleFiveUIntsArrayMaps_4960c977_internal_macro$
+
+.macro handleFiveUIntsArrayMaps_4960c977_internal_macro
+.loc ../contracts/BounceReceiver.sol, 86
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 87
+LDDICT
+LDDICT
+LDDICT
+LDREF
+ENDS
+CTOS
+LDDICT
+LDDICT
+ENDS
+.loc ../contracts/BounceReceiver.sol, 94
+REVERSE 5, 0
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 5
+NEWC
+STSLICECONST x6bcf7a59
+STDICT
+STDICT
+STDICT
+ROTREV
+NEWC
+STDICT
+STDICT
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 95
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro fiveHugeMaps
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/BounceReceiver.sol, 106
+LDDICT
+LDDICT
+LDDICT
+LDREF
+ENDS
+CTOS
+LDDICT
+LDDICT
+ENDS
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $fiveHugeMaps_837130fd_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	fiveHugeMaps_837130fd_internal
+.type	fiveHugeMaps_837130fd_internal, @function
+CALL $fiveHugeMaps_837130fd_internal_macro$
+
+.macro fiveHugeMaps_837130fd_internal_macro
+.loc ../contracts/BounceReceiver.sol, 113
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 114
+REVERSE 5, 0
+GETGLOB 13
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 5
+NEWC
+STSLICECONST x0428fbbe
+STDICT
+STDICT
+STDICT
+ROTREV
+NEWC
+STDICT
+STDICT
+STBREFR
+STBREFR
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.globl	handleFiveHugeMaps_bd41289a_internal
+.type	handleFiveHugeMaps_bd41289a_internal, @function
+CALL $handleFiveHugeMaps_bd41289a_internal_macro$
+
+.macro handleFiveHugeMaps_bd41289a_internal_macro
+.loc ../contracts/BounceReceiver.sol, 118
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/BounceReceiver.sol, 119
+LDDICT
+LDDICT
+LDDICT
+LDREF
+ENDS
+CTOS
+LDDICT
+LDDICT
+ENDS
+.loc ../contracts/BounceReceiver.sol, 126
+REVERSE 5, 0
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 5
+NEWC
+STSLICECONST x418d6068
+STDICT
+STDICT
+STDICT
+ROTREV
+NEWC
+STDICT
+STDICT
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 127
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/BounceReceiver.sol, 0
+
+.macro on_bounce_macro
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+PUSHCONT {
+	.loc ../contracts/BounceReceiver.sol, 141
+	ACCEPT
+	.loc ../contracts/BounceReceiver.sol, 142
+	PLDREF
+	CTOS
+	.loc ../contracts/BounceReceiver.sol, 143
+	DUP
+	LDU 32
+	POP S2
+	.loc ../contracts/BounceReceiver.sol, 144
+	DUP
+	PUSHINT 571063426
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/BounceReceiver.sol, 145
+		DROP
+		CALLREF {
+			CALL $handleFiveUInts_8dfe4f99_internal_macro$
+		}
+		.loc ../contracts/BounceReceiver.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/BounceReceiver.sol, 148
+	DUP
+	PUSHINT 703324219
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/BounceReceiver.sol, 149
+		DROP
+		CALLREF {
+			CALL $handleFiveStrings_e2a92608_internal_macro$
+		}
+		.loc ../contracts/BounceReceiver.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/BounceReceiver.sol, 152
+	DUP
+	PUSHINT 353368410
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/BounceReceiver.sol, 153
+		DROP
+		CALLREF {
+			CALL $handleFiveUIntsArrayMaps_4960c977_internal_macro$
+		}
+		.loc ../contracts/BounceReceiver.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/BounceReceiver.sol, 156
+	PUSHINT 69794750
+	EQUAL
+	IFJMPREF {
+		CALL $handleFiveHugeMaps_bd41289a_internal_macro$
+	}
+	.loc ../contracts/BounceReceiver.sol, 0
+	DROP
+	.loc ../contracts/BounceReceiver.sol, 140
+}
+CALLX
+.loc ../contracts/BounceReceiver.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDREF
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDU 128
+LDMSGADDR
+ENDS
+SETGLOB 13
+SETGLOB 12
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHINT 1
+	OVER
+	PUSHINT 64
+	DICTUGETREF
+	PUSHCONT {
+		PUSHREF {
+		}
+	}
+	IFNOT
+	PUSHINT 2
+	PUSH S2
+	PUSHINT 64
+	DICTUGET
+	PUSHCONT {
+		PUSHREFSLICE {
+			.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+		}
+	}
+	IFNOT
+	PUSHINT 3
+	PUSH S3
+	PUSHINT 64
+	DICTUGET
+	ZEROSWAPIFNOT
+	PUSHCONT {
+		PLDU 128
+	}
+	IF
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 13
+GETGLOB 12
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STREF
+STSLICE
+ROTREV
+NEWC
+STU 128
+STSLICE
+STBREFR
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+PLDU 4
+MODPOW2 1
+IFJMPREF {
+	OVER
+	LDSLICE 32
+	NIP
+	CALL $on_bounce_macro$
+}
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	SWAP
+	LDU 1 ; signatureSlice hashMsgSlice hasPubkey msgSlice
+	SWAP
+	PUSHCONT {
+		LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+		XCHG S3
+		SWAP
+	}
+	PUSHCONT {
+		XCHG S2
+		GETGLOB 2
+	}
+	IFELSE
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+PUSHCONT {
+	LDU 1 ; hasPubkey msgSlice
+	SWAP
+	THROWIF 58
+}
+IFELSE
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; expireAt msgSlice
+SWAP
+NOW ; msgSlice expireAt now
+GREATER ; msgSlice expireAt>now
+THROWIFNOT 57
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro public_function_selector
+DUP
+PUSHINT 703324219
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 26039242
+	EQUAL
+	IFJMPREF {
+		CALL $deployBounceProducer$
+	}
+	DUP
+	PUSHINT 69794750
+	EQUAL
+	IFJMPREF {
+		CALL $fiveHugeMaps$
+	}
+	DUP
+	PUSHINT 571063426
+	EQUAL
+	IFJMPREF {
+		CALL $fiveUInts$
+	}
+	DUP
+	PUSHINT 703324219
+	EQUAL
+	IFJMPREF {
+		CALL $fiveStrings$
+	}
+}
+DUP
+PUSHINT 1898036004
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1756716863
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 1898036004
+	EQUAL
+	IFJMPREF {
+		CALL $fiveUIntsArrayMaps$
+	}
+}
+
