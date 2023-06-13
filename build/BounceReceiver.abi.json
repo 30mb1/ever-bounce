@@ -65,12 +65,24 @@
 			],
 			"outputs": [
 			]
+		},
+		{
+			"name": "action",
+			"inputs": [
+				{"name":"a","type":"map(uint128,uint128[])"},
+				{"name":"b","type":"map(uint128,uint128[])"},
+				{"name":"c","type":"map(uint128,uint128[])"},
+				{"name":"d","type":"map(uint128,uint128[])"},
+				{"name":"e","type":"map(uint128,uint128[])"}
+			],
+			"outputs": [
+			]
 		}
 	],
 	"data": [
 		{"key":1,"name":"bounceProducerCode","type":"cell"},
 		{"key":2,"name":"owner","type":"address"},
-		{"key":3,"name":"nonce","type":"uint128"}
+		{"key":3,"name":"_nonce","type":"uint128"}
 	],
 	"events": [
 		{
@@ -128,7 +140,7 @@
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"bounceProducerCode","type":"cell"},
 		{"name":"owner","type":"address"},
-		{"name":"nonce","type":"uint128"},
+		{"name":"_nonce","type":"uint128"},
 		{"name":"bounceProducer","type":"address"}
 	]
 }

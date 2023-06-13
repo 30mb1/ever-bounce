@@ -27,6 +27,16 @@ contract BounceProducer {
         revert(1003);
     }
 
+    function actionRevert(
+        mapping(uint128 => uint128[]) a,
+        mapping(uint128 => uint128[]) b,
+        mapping(uint128 => uint128[]) c,
+        mapping(uint128 => uint128[]) d,
+        mapping(uint128 => uint128[]) e
+    ) public {
+        address(msg.sender).transfer(1000000 ever, false, 0);
+    }
+
     function fiveHugeMaps(
         mapping(uint128 => CommonStructures.UIntStringMap[]) a,
         mapping(uint128 => CommonStructures.UIntStringMap[]) b,

@@ -46,7 +46,7 @@ describe("Test Sample contract", async function () {
             initParams: {
               owner: signer.account.address,
               bounceProducerCode,
-              nonce: getRandomNonce(),
+              _nonce: getRandomNonce(),
             },
           })
           .then(res => res.contract);
@@ -135,6 +135,29 @@ describe("Test Sample contract", async function () {
       await traceTree?.beautyPrint();
       expect(traceTree).to.emit("FiveUIntsArrayMaps").withNamedArgs(fiveMaps);
     });
+
+    it("handle action revert", async () => {
+      const fiveMaps = {
+        a: [[getRandomStringNonce(), [getRandomStringNonce()]]],
+        b: [[getRandomStringNonce(), [getRandomStringNonce()]]],
+        c: [[getRandomStringNonce(), [getRandomStringNonce()]]],
+        d: [[getRandomStringNonce(), [getRandomStringNonce()]]],
+        e: [[getRandomStringNonce(), [getRandomStringNonce()]]],
+      };
+      const { traceTree } = await locklift.tracing.trace(
+        // @ts-ignore
+        bounceReceiver.methods.action(fiveMaps).send({
+          from: signer.account.address,
+          amount: toNano(1),
+          bounce: true,
+        }),
+        { raise: false },
+      );
+
+      await traceTree?.beautyPrint();
+      expect(traceTree).to.emit("FiveUIntsArrayMaps").withNamedArgs(fiveMaps);
+    });
+
     it("handle five huge maps", async () => {
       const fiveMaps = ["a", "b", "c", "d", "e"].reduce((acc, next) => {
         return {

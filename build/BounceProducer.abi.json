@@ -47,6 +47,18 @@
 			]
 		},
 		{
+			"name": "actionRevert",
+			"inputs": [
+				{"name":"a","type":"map(uint128,uint128[])"},
+				{"name":"b","type":"map(uint128,uint128[])"},
+				{"name":"c","type":"map(uint128,uint128[])"},
+				{"name":"d","type":"map(uint128,uint128[])"},
+				{"name":"e","type":"map(uint128,uint128[])"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "fiveHugeMaps",
 			"inputs": [
 				{"components":[{"name":"uint128Arr","type":"uint128[]"},{"name":"stringArr","type":"string[]"},{"components":[{"name":"field1","type":"uint128"},{"name":"field2","type":"uint128"}],"name":"uint128Map","type":"map(uint128,tuple[])"}],"name":"a","type":"map(uint128,tuple[])"},

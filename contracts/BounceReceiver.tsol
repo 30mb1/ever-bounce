@@ -16,7 +16,7 @@ contract BounceReceiver {
     uint128 constant MIN_CONTRACT_BALANCE = 0.1 ever;
     TvmCell static bounceProducerCode;
     address static owner;
-    uint128 static nonce;
+    uint128 static _nonce;
     BounceProducer bounceProducer;
 
     function _reserve() internal pure returns (uint128) {
@@ -26,6 +26,7 @@ contract BounceReceiver {
 
     function deployBounceProducer(uint128 nonce) public {
         tvm.rawReserve(_reserve(), 0);
+
 
         bounceProducer = BounceProducer(
             new BounceProducer{
@@ -135,6 +136,29 @@ contract BounceReceiver {
         mapping(uint128 => CommonStructures.UIntStringMap[]) e
     );
 
+    function action(
+        mapping(uint128 => uint128[]) a,
+        mapping(uint128 => uint128[]) b,
+        mapping(uint128 => uint128[]) c,
+        mapping(uint128 => uint128[]) d,
+        mapping(uint128 => uint128[]) e
+    ) public {
+        tvm.rawReserve(_reserve(), 0);
+        bounceProducer.actionRevert{value: 0, flag: 128, bounce: true}(a,b,c,d,e);
+    }
+
+    function handleAction(TvmSlice _slice) internal {
+        tvm.rawReserve(_reserve(), 0);
+        (
+            mapping(uint128 => uint128[]) a,
+            mapping(uint128 => uint128[]) b,
+            mapping(uint128 => uint128[]) c,
+            mapping(uint128 => uint128[]) d,
+            mapping(uint128 => uint128[]) e
+        ) = _slice.decodeFunctionParams(BounceProducer.actionRevert);
+        emit FiveUIntsArrayMaps(a, b, c, d, e);
+        owner.transfer({value: 0, flag: 128, bounce: false});
+    }
 
 
     onBounce(TvmSlice _slice) external {
@@ -151,6 +175,10 @@ contract BounceReceiver {
         }
         if (functionId == tvm.functionId(BounceProducer.fiveMapsOfUIntsArr)) {
             handleFiveUIntsArrayMaps(newSlice);
+            return;
+        }
+        if (functionId == tvm.functionId(BounceProducer.actionRevert)) {
+            handleAction(newSlice);
             return;
         }
         if (functionId == tvm.functionId(BounceProducer.fiveHugeMaps)) {
