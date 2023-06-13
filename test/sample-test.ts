@@ -76,7 +76,7 @@ describe("Test Sample contract", async function () {
           amount: toNano(1),
           bounce: true,
         }),
-        { rise: false },
+        { raise: false },
       );
 
       await traceTree?.beautyPrint();
@@ -102,7 +102,7 @@ describe("Test Sample contract", async function () {
           amount: toNano(1),
           bounce: true,
         }),
-        { rise: false },
+        { raise: false },
       );
 
       await traceTree?.beautyPrint();
@@ -123,12 +123,13 @@ describe("Test Sample contract", async function () {
         e: [[getRandomStringNonce(), [getRandomStringNonce()]]],
       };
       const { traceTree } = await locklift.tracing.trace(
+        // @ts-ignore
         bounceReceiver.methods.fiveUIntsArrayMaps(fiveMaps).send({
           from: signer.account.address,
           amount: toNano(1),
           bounce: true,
         }),
-        { rise: false },
+        { raise: false },
       );
 
       await traceTree?.beautyPrint();
@@ -159,12 +160,13 @@ describe("Test Sample contract", async function () {
         };
       }, {});
       const { traceTree } = await locklift.tracing.trace(
+        // @ts-ignore
         bounceReceiver.methods.fiveHugeMaps(fiveMaps).send({
           from: signer.account.address,
           amount: toNano(3),
           bounce: true,
         }),
-        { rise: false },
+        { raise: false },
       );
 
       await traceTree?.beautyPrint();

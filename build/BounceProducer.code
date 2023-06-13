@@ -10,7 +10,7 @@ IFREF {
 GETGLOB 6
 THROWIF 51
 ENDS
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -25,7 +25,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/BounceProducer.sol, 12
+.loc ../contracts/BounceProducer.tsol, 12
 OVER
 PUSHCONT {
 	LDREF
@@ -39,7 +39,7 @@ LDU 128
 LDU 128
 LDU 128
 ENDS
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 CALLREF {
 	CALL $fiveUInts_0d485330_internal_macro$
 }
@@ -54,10 +54,10 @@ THROW 0
 CALL $fiveUInts_0d485330_internal_macro$
 
 .macro fiveUInts_0d485330_internal_macro
-.loc ../contracts/BounceProducer.sol, 13
+.loc ../contracts/BounceProducer.tsol, 13
 BLKDROP 5
 THROW 1001
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 
 .macro fiveStrings
 DROP
@@ -68,7 +68,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/BounceProducer.sol, 16
+.loc ../contracts/BounceProducer.tsol, 16
 LDREF
 LDREF
 LDREF
@@ -78,7 +78,7 @@ CTOS
 LDREF
 LDREF
 ENDS
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 CALLREF {
 	CALL $fiveStrings_b7c71a1f_internal_macro$
 }
@@ -93,10 +93,10 @@ THROW 0
 CALL $fiveStrings_b7c71a1f_internal_macro$
 
 .macro fiveStrings_b7c71a1f_internal_macro
-.loc ../contracts/BounceProducer.sol, 17
+.loc ../contracts/BounceProducer.tsol, 17
 BLKDROP 5
 THROW 1002
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 
 .macro fiveMapsOfUIntsArr
 DROP
@@ -107,7 +107,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/BounceProducer.sol, 20
+.loc ../contracts/BounceProducer.tsol, 20
 LDDICT
 LDDICT
 LDDICT
@@ -117,7 +117,7 @@ CTOS
 LDDICT
 LDDICT
 ENDS
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 CALLREF {
 	CALL $fiveMapsOfUIntsArr_f33e2d33_internal_macro$
 }
@@ -132,10 +132,10 @@ THROW 0
 CALL $fiveMapsOfUIntsArr_f33e2d33_internal_macro$
 
 .macro fiveMapsOfUIntsArr_f33e2d33_internal_macro
-.loc ../contracts/BounceProducer.sol, 27
+.loc ../contracts/BounceProducer.tsol, 27
 BLKDROP 5
 THROW 1003
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 
 .macro fiveHugeMaps
 DROP
@@ -146,7 +146,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/BounceProducer.sol, 30
+.loc ../contracts/BounceProducer.tsol, 30
 LDDICT
 LDDICT
 LDDICT
@@ -156,7 +156,7 @@ CTOS
 LDDICT
 LDDICT
 ENDS
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 CALLREF {
 	CALL $fiveHugeMaps_837130fd_internal_macro$
 }
@@ -171,10 +171,10 @@ THROW 0
 CALL $fiveHugeMaps_837130fd_internal_macro$
 
 .macro fiveHugeMaps_837130fd_internal_macro
-.loc ../contracts/BounceProducer.sol, 37
+.loc ../contracts/BounceProducer.tsol, 37
 BLKDROP 5
 THROW 1004
-.loc ../contracts/BounceProducer.sol, 0
+.loc ../contracts/BounceProducer.tsol, 0
 
 .macro c4_to_c7
 PUSHROOT

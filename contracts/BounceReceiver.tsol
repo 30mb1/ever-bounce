@@ -3,10 +3,10 @@ pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
-import "./BounceProducer.sol";
-import "./lib/CommonStructures.sol";
+import "./BounceProducer.tsol";
+import "./lib/CommonStructures.tsol";
 
-import "locklift/src/console.sol";
+import "locklift/src/console.tsol";
 
 
 contract BounceReceiver {

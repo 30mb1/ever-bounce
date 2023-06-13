@@ -2,7 +2,7 @@ pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
-import "./lib/CommonStructures.sol";
+import "./lib/CommonStructures.tsol";
 
 
 contract BounceProducer {

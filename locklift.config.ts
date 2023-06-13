@@ -4,10 +4,12 @@ import * as chai from "chai";
 import { FactorySource } from "./build/factorySource";
 import { SimpleGiver, GiverWalletV2_3 } from "./giverSettings";
 chai.use(lockliftChai);
+import * as dotenv from "dotenv";
 
 declare global {
   const locklift: import("locklift").Locklift<FactorySource>;
 }
+dotenv.config();
 
 const LOCAL_NETWORK_ENDPOINT = process.env.NETWORK_ENDPOINT || "http://localhost/graphql";
 const DEV_NET_NETWORK_ENDPOINT = process.env.DEV_NET_NETWORK_ENDPOINT || "https://devnet-sandbox.evercloud.dev/graphql";
@@ -40,6 +42,36 @@ const config: LockliftConfig = {
     version: "0.15.48",
   },
   networks: {
+    local: {
+      deploy: ['local/'],
+      // Specify connection settings for https://github.com/broxus/everscale-client/
+      connection: {
+        group: "localnet",
+        // @ts-ignore
+        type: "graphql",
+        data: {
+          // @ts-ignore
+          endpoints: ["http://localhost:5000/graphql"],
+          latencyDetectionInterval: 1000,
+          local: true,
+        },
+      },
+      // This giver is default local-node giverV2
+      giver: {
+        address: "0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415",
+        key: "172af540e43a524763dd53b26a066d472a97c4de37d5498170564510608250c3",
+      },
+      tracing: {
+        endpoint: 'http://localhost:5000/graphql',
+      },
+
+      keys: {
+        // Use everdev to generate your phrase
+        // !!! Never commit it in your repos !!!
+        // phrase: "action inject penalty envelope rabbit element slim tornado dinner pizza off blood",
+        amount: 500
+      },
+    },
     rfld: {
       // Specify connection settings for https://github.com/broxus/everscale-standalone-client/
       connection: {
@@ -81,10 +113,8 @@ const config: LockliftConfig = {
         },
       },
       giver: {
-        giverFactory: (ever, keyPair, address) => new GiverWalletV2_3(ever, keyPair, address),
-        address: "0:aacb26e7f3caa01bae4a8b00a2d1976408f47208286966a0e9d472e81a72f287",
-        phrase: process.env.GIVER_SEED || "",
-        accountId: 0,
+        address: "0:a4053fd2e9798d0457c9e8f012cef203e49da863d76f36d52d5e2e62c326b217",
+        key: process.env.TESTNET_GIVER_KEY ?? ""
       },
       tracing: {
         endpoint: DEV_NET_NETWORK_ENDPOINT,
@@ -92,36 +122,7 @@ const config: LockliftConfig = {
       keys: {
         // Use everdev to generate your phrase
         // !!! Never commit it in your repos !!!
-        phrase: process.env.SEED || "",
-        amount: 20,
-      },
-    },
-    main: {
-      // Specify connection settings for https://github.com/broxus/everscale-standalone-client/
-      connection: {
-        id: 1,
-        type: "graphql",
-        group: "main",
-        data: {
-          endpoints: [MAIN_NET_NETWORK_ENDPOINT],
-          latencyDetectionInterval: 1000,
-          local: false,
-        },
-      },
-      // This giver is default Wallet
-      giver: {
-        giverFactory: (ever, keyPair, address) => new GiverWalletV2_3(ever, keyPair, address),
-        address: "",
-        phrase: "",
-        accountId: 0,
-      },
-      tracing: {
-        endpoint: MAIN_NET_NETWORK_ENDPOINT,
-      },
-      keys: {
-        // Use everdev to generate your phrase
-        // !!! Never commit it in your repos !!!
-        // phrase: "action inject penalty envelope rabbit element slim tornado dinner pizza off blood",
+        // phrase: process.env.SEED || "",
         amount: 20,
       },
     },
